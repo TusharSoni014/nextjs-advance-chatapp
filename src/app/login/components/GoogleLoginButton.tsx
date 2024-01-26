@@ -12,20 +12,13 @@ export default function GoogleLoginButton() {
   async function loginWithGoogle() {
     setIsLoading(true);
     try {
-      // await signIn("google");
-      toast({
-        variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "There was a problem with your request.",
-      });
-      console.log("working")
+      await signIn("google");
     } catch (error) {
       toast({
         variant: "destructive",
         title: "Uh oh! Something went wrong.",
-        description: "There was a problem with your request.",
+        description: "There was a problem with login request!",
       });
-      throw new Error("something went wrong")
     } finally {
       setIsLoading(false);
     }
