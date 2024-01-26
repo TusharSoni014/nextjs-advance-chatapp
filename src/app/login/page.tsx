@@ -1,10 +1,8 @@
 import Link from "next/link";
 import React from "react";
-import GoogleLoginButton from "./components/GoogleLoginButton";
+import GoogleLoginButton from "../../components/GoogleLoginButton";
 
-type Props = {};
-
-export default function page({}: Props) {
+export default function page() {
   return (
     <div className="__login_page flex justify-center items-center flex-col gap-3 p-3">
       <h1 className="text-center font-bold text-4xl p-3">Login To NextChat</h1>
@@ -14,7 +12,7 @@ export default function page({}: Props) {
         <Link className=" text-purple-500" href="/terms">
           Terms & conditions
         </Link>{" "}
-        and {" "}
+        and{" "}
         <Link className=" text-purple-500" href="/privacy">
           Privacy Policy
         </Link>

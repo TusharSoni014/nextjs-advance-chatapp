@@ -27,10 +27,10 @@ export default function GoogleLoginButton() {
   return (
     <Button onClick={loginWithGoogle} loading={isLoading}>
       {isLoading ? (
-        "Redirecting..."
+        <>Redirecting...</>
       ) : (
         <>
-          <FcGoogle className=" text-lg" /> Login with Google
+          <FcGoogle className="text-lg" /> Login with Google
         </>
       )}
     </Button>
