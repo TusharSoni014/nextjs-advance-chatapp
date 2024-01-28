@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/form";
 import { toast } from "./ui/use-toast";
 
-const formSchema = z.object({
+export const formSchema = z.object({
   email: z.string().email(),
 });
 
@@ -58,23 +58,30 @@ const AddFriendBtn = () => {
   };
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(addFriend)} className="flex gap-2">
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Email of your friend" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Send Request</Button>
-      </form>
-    </Form>
+    <>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(addFriend)} className="flex gap-2">
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input placeholder="Email of your friend" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button type="submit">Send Request</Button>
+        </form>
+      </Form>
+      {showSuccessState && (
+        <p className="text-center text-xs text-green-600">
+          Friend Request Sent Successfully!
+        </p>
+      )}
+    </>
   );
 };
 
